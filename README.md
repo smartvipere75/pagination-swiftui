@@ -6,6 +6,8 @@ Pagination for SwiftUI.
 
 * Xcode 11
 * iOS 13
+* macOS 10.15 (Catalina)
+* watchOS 6
 
 ### Installation
 
