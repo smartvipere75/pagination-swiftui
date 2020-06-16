@@ -23,7 +23,7 @@ public protocol PagingListPresentable: class {
     func onPageChange(_ page: Int)
 }
 
-extension PagingListPresentable {
+public extension PagingListPresentable {
     /// Function to start loading page.
     func startLoadingPage() {
         if !isLoadingPage && canLoadPage {
