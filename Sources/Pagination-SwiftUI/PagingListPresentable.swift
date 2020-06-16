@@ -8,7 +8,7 @@
 import Foundation
 
 /// Pagination protocol for ObservableObject models.
-protocol PagingListPresentable: class {
+public protocol PagingListPresentable: class {
     /// Type of paginated data.
     associatedtype PagingItem: Equatable
     /// A list of paginated data.

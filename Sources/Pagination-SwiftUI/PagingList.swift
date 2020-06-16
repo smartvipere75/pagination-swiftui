@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// List with pagination.
-struct PagingList<Content: View, Loader: View, Model: PagingListPresentable>: View {
+public struct PagingList<Content: View, Loader: View, Model: PagingListPresentable>: View {
     /// Model that conforms to PagingListPresentable.
     let model: Model
     /// View that will be shown when page is loading.
@@ -17,7 +17,7 @@ struct PagingList<Content: View, Loader: View, Model: PagingListPresentable>: Vi
     let content: (Int, Model.PagingItem) -> Content
     
     /// Creates a pagination list.
-    init(model: Model,
+    public init(model: Model,
          loader: Loader,
          @ViewBuilder _ content: @escaping (Int, Model.PagingItem) -> Content) {
         self.model = model
@@ -25,7 +25,7 @@ struct PagingList<Content: View, Loader: View, Model: PagingListPresentable>: Vi
         self.content = content
     }
     
-    var body: some View {
+    public var body: some View {
         List(0..<model.pagingItems.count+(self.model.canLoadPage ? 1 : 0), id: \.self) { index in
             if index == self.model.pagingItems.count-1 {
                 self.content(index,self.model.pagingItems[index])
